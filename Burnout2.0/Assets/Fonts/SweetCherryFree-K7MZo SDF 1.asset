@@ -57,11 +57,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 71c1514a6bd24e1e882cebbe1904ce04, type: 3}
-  m_Name: SweetCherryFree-K7MZo SDF
+  m_Name: SweetCherryFree-K7MZo SDF 1
   m_EditorClassIdentifier: 
-  hashCode: -614171221
+  hashCode: 1182439610
   material: {fileID: 7446824108797908660}
-  materialHashCode: 783223979
+  materialHashCode: 416231002
   m_Version: 1.1.0
   m_SourceFontFileGUID: 575f17e844502864ba38ca61ddf91c0d
   m_SourceFontFile_EditorRef: {fileID: 12800000, guid: 575f17e844502864ba38ca61ddf91c0d, type: 3}
