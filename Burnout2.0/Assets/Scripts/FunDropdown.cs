@@ -12,6 +12,7 @@ public class FunDropdown : MonoBehaviour
     {
         var dropdown = transform.GetComponent<Dropdown>();
 
+
         List<string> Fun = new List<string>();
         Fun.Add("Read a personal book");
         Fun.Add("Eat with Friends");
