@@ -38,7 +38,7 @@ public class FunDropdown : MonoBehaviour
     {
         int index = dropdown.value;
 
-        TextBox.text = dropdown.options[index].text;
+        //TextBox.text = dropdown.options[index].text;
     }
     
 }
