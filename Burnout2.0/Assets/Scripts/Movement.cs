@@ -2,37 +2,76 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
-
-[RequireComponent(typeof(CharacterController))]
+using TMPro;
+using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class Movement : MonoBehaviour
 {
-    private CharacterController _characterController;
-    private float _speed = 5.0f;
-    private Vector2 _playerMovementInput;
-
+    public float speed = 0;
+    private Rigidbody rb;
+    private float movementX;
+    private float movementY;
+    private int points;
+    public Transform spawnPoint;
+    public GameObject player;
+    public Text TextBox;
+    
     // Start is called before the first frame update
     void Start()
     {
-        Debug.Log("Player created");
-        _characterController = GetComponent<CharacterController>();
-    }
+        rb = GetComponent<Rigidbody>();
+        points = 100;
 
-    // Update is called once per frame
+    }
     void Update()
     {
-        MovePlayer();
+        if(Input.GetKeyDown(KeyCode.Space))
+            player.transform.position = spawnPoint.position;
     }
 
-    void MovePlayer(){
-        Vector3 movement = new Vector3(_playerMovementInput.x, 0.0f, _playerMovementInput.y);
+    void OnMove(InputValue movementValue)
+    {
+            Vector2 movementVector = movementValue.Get<Vector2>();
 
-        _characterController.SimpleMove(movement * _speed);
+            movementX = movementVector.x;
+            movementY = movementVector.y;
     }
 
-    void OnMove(InputValue iv){
-        Debug.Log("Movement pressed");
-        _playerMovementInput = iv.Get<Vector2>();
+    void FixedUpdate()
+    {
+        Vector3 movement = new Vector3(movementX, 0.0f, movementY);
+
+        rb.AddForce(movement * speed);
     }
+<<<<<<< Updated upstream
     
 }
+=======
+
+    void OnTriggerEnter(Collider other)
+    {
+        if(other.gameObject.CompareTag("Task"))
+        {
+            points = points - 20;
+            Debug.Log("Lost 20% of energy");
+            TextBox.text = points.ToString() + "%";
+            other.tag = "Done";
+        }
+        if(other.gameObject.CompareTag("Fun"))
+        {
+            points = points + 20;
+            Debug.Log("Gained 20% of energy");
+            TextBox.text = points.ToString() + "%";
+            Debug.Log(points);
+            other.tag = "Done";
+        }
+
+        if(points < 0)
+        {
+            SceneManager.LoadScene("end");
+        }
+    }
+
+}
+>>>>>>> Stashed changes

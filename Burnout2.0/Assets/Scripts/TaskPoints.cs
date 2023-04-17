@@ -22,10 +22,11 @@ public class TaskPoints : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        if(other == Task1)
+        if(other.gameObject.CompareTag("Task"))
         {
             points = points - 20;
             Debug.Log("LOst 20% of energy");
+            Debug.Log(points);
         }
     }
 }

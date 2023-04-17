@@ -7,6 +7,7 @@ public class FunDropdown : MonoBehaviour
 {
 
     public Text TextBox;
+    public GameObject FunLight;
     // Start is called before the first frame update
     void Start()
     {
@@ -17,10 +18,8 @@ public class FunDropdown : MonoBehaviour
         Fun.Add("Read a personal book");
         Fun.Add("Eat with Friends");
         Fun.Add("Skip Class");
-        Fun.Add("phone games");
         Fun.Add("Daydream");
         Fun.Add("Plan a roadtrip");
-        Fun.Add("Hide in empty room");
 
 
         foreach (var item in Fun)
@@ -37,8 +36,28 @@ public class FunDropdown : MonoBehaviour
     void ListsItemsSelected(Dropdown dropdown)
     {
         int index = dropdown.value;
-
-        //TextBox.text = dropdown.options[index].text;
+        Debug.Log(index);
+        switch (index)
+        {
+            case 0:
+                FunLight.transform. position = new Vector3(0f, 15f, -17f);
+                break;
+            case 1:
+                FunLight.transform. position = new Vector3(17f, 15f, -21f);
+                break;
+            case 2:
+                FunLight.transform. position = new Vector3(8.5f, 15f, 6.5f);
+                break;
+            case 3:
+                FunLight.transform. position = new Vector3(24f, 15f, -31f);
+                break;
+            case 4:
+                FunLight.transform. position = new Vector3(3f, 15f, -5f);
+                break;
+            default:
+                FunLight.transform. position = new Vector3(2f, 15f, 0f);
+                break;
+        }
     }
     
 }
