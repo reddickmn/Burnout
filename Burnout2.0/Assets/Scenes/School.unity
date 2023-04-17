@@ -7227,7 +7227,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b3b36d44c9d541749aa1b1996e60a663, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Player: {fileID: 0}
+  Player: {fileID: 698109577}
 --- !u!1001 &653838828
 PrefabInstance:
   m_ObjectHideFlags: 0
