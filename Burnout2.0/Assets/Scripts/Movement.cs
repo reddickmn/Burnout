@@ -8,7 +8,7 @@ using UnityEngine.SceneManagement;
 
 public class Movement : MonoBehaviour
 {
-    private int points;
+    private int points, done;
     public Text TextBox;
     private CharacterController controller;
     private Vector3 playerVelocity;
@@ -54,6 +54,7 @@ public class Movement : MonoBehaviour
         if(other.gameObject.CompareTag("Task"))
         {
             points = points - 20;
+            done = done + 1;
             Debug.Log("Lost 20% of energy");
             TextBox.text = points.ToString() + "%";
             other.tag = "Done";
@@ -66,11 +67,11 @@ public class Movement : MonoBehaviour
             Debug.Log(points);
             other.tag = "Done";
         }
-
         if(points < 0)
         {
             SceneManager.LoadScene("end");
         }
+
     }
 
 }
