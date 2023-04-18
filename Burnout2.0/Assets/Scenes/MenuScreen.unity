@@ -432,8 +432,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Burnout
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: b059b9026a861ba4aaa8be1407512417, type: 2}
-  m_sharedMaterial: {fileID: 3782485583696205859, guid: b059b9026a861ba4aaa8be1407512417, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 21502ab4f5f0d0148826da5f939bb61c, type: 2}
+  m_sharedMaterial: {fileID: 3782485583696205859, guid: 21502ab4f5f0d0148826da5f939bb61c, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -781,7 +781,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.49056602, g: 0.3524066, b: 0.28032342, a: 1}
+  m_Color: {r: 0.93333334, g: 0.85490197, b: 0.59607846, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -1068,7 +1068,7 @@ MonoBehaviour:
   m_text: PLAY
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: f0b5c09ca4c161a4795b7d80ef3fb704, type: 2}
-  m_sharedMaterial: {fileID: 7446824108797908660, guid: f0b5c09ca4c161a4795b7d80ef3fb704, type: 2}
+  m_sharedMaterial: {fileID: 6086188726288746594, guid: f0b5c09ca4c161a4795b7d80ef3fb704, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
