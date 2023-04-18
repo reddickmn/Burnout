@@ -11,11 +11,13 @@ public class TimerScript : MonoBehaviour
     public float timeRemaining = 300;
     public bool timerIsRunning = false;
     public Text timeText;
-    public float tasksDone = 0;
+    private float tasksDone;
+
     private void Start()
     {
         // Starts the timer automatically
         timerIsRunning = true;
+        tasksDone = 0;
     }
     void Update()
     {

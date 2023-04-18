@@ -8,46 +8,46 @@ using UnityEngine.SceneManagement;
 
 public class Movement : MonoBehaviour
 {
-    public float speed = 0;
-    private Rigidbody rb;
-    private float movementX;
-    private float movementY;
     private int points;
-    public Transform spawnPoint;
-    public GameObject player;
     public Text TextBox;
+    private CharacterController controller;
+    private Vector3 playerVelocity;
+    private bool groundedPlayer;
+    private float playerSpeed = 2.0f;
+    private float jumpHeight = 1.0f;
+    private float gravityValue = -9.81f;
     
     // Start is called before the first frame update
     void Start()
     {
-        rb = GetComponent<Rigidbody>();
+        controller = gameObject.AddComponent<CharacterController>();
         points = 100;
 
     }
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.Space))
-            player.transform.position = spawnPoint.position;
-    }
+        groundedPlayer = controller.isGrounded;
+        if (groundedPlayer && playerVelocity.y < 0)
+        {
+            playerVelocity.y = 0f;
+        }
 
-    void OnMove(InputValue movementValue)
-    {
-            Vector2 movementVector = movementValue.Get<Vector2>();
+        Vector3 move = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical"));
+        controller.Move(move * Time.deltaTime * playerSpeed);
 
-            movementX = movementVector.x;
-            movementY = movementVector.y;
-    }
+        if (move != Vector3.zero)
+        {
+            gameObject.transform.forward = move;
+        }
 
-    void FixedUpdate()
-    {
-        Vector3 movement = new Vector3(movementX, 0.0f, movementY);
+        // Changes the height position of the player..
+        if (Input.GetButtonDown("Jump") && groundedPlayer)
+        {
+            playerVelocity.y += Mathf.Sqrt(jumpHeight * -3.0f * gravityValue);
+        }
 
-        rb.AddForce(movement * speed);
-    }
-<<<<<<< Updated upstream
-    
-}
-=======
+        playerVelocity.y += gravityValue * Time.deltaTime;
+        controller.Move(playerVelocity * Time.deltaTime);}
 
     void OnTriggerEnter(Collider other)
     {
@@ -74,4 +74,3 @@ public class Movement : MonoBehaviour
     }
 
 }
->>>>>>> Stashed changes
